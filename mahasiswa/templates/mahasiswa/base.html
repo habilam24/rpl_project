@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}RPL Django{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'mahasiswa/css/style.css' %}">
+
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 15px;
+        background-color: #005fc4;
+        color: white;
+    }
+
+    header h1 {
+        margin: 0;
+        text-align: center;
+    }
+
+    .logout-btn {
+        position: absolute;
+        right: 20px;
+        background-color: red;
+        color: white;
+        padding: 8px 14px;
+        text-decoration: none;
+        border-radius: 6px;
+    }
+
+    .logout-btn:hover {
+        background-color: darkred;
+    }
+
+    main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #f4f4f4;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Praktikum RPL - Django</h1>
+
+    <a href="/accounts/logout/" class="logout-btn">
+        Logout
+    </a>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2025 - Praktikum</p>
+</footer>
+
+<!-- JS -->
+<script src="{% static 'mahasiswa/js/main.js' %}"></script>
+
+</body>
+</html>

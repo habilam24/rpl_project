@@ -1,0 +1,29 @@
+body{
+    font-family: Arial;
+    margin:0;
+    background:#f5f5f5;
+}
+
+header{
+    background:blue;
+    color:white;
+    padding:20px;
+}
+
+.hero{
+    text-align:center;
+    margin-top:50px;
+}
+
+.logo{
+    width:120px;
+}
+
+.btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:blue;
+    color:white;
+    cursor:pointer;
+}
