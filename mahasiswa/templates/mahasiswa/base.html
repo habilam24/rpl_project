@@ -1,87 +1,55 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}RPL Django{% endblock %}</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'mahasiswa/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mahasiswa/css/style.css' %}" />
 
     <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        min-height: 100vh;
+      .topbar {
         display: flex;
-        flex-direction: column;
-    }
-
-    header {
-        display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        position: relative;
-        padding: 15px;
-        background-color: #005fc4;
-        color: white;
-    }
+        padding: 10px 20px;
+      }
 
-    header h1 {
-        margin: 0;
-        text-align: center;
-    }
-
-    .logout-btn {
-        position: absolute;
-        right: 20px;
+      .logout-btn {
         background-color: red;
         color: white;
         padding: 8px 14px;
         text-decoration: none;
         border-radius: 6px;
-    }
+      }
 
-    .logout-btn:hover {
+      .logout-btn:hover {
         background-color: darkred;
-    }
+      }
+    </style>
+  </head>
 
-    main {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+  <body>
+    <header>
+      <div class="topbar">
+        <h1>Lab M.6.13</h1>
 
-    footer {
-        text-align: center;
-        padding: 10px;
-        background-color: #f4f4f4;
-    }
-</style>
-</head>
-<body>
+        <a href="/accounts/logout/" class="logout-btn">
+          Logout
+        </a>
+      </div>
+    </header>
 
-<header>
-    <h1>Praktikum RPL - Django</h1>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
 
-    <a href="/accounts/logout/" class="logout-btn">
-        Logout
-    </a>
-</header>
+    <footer>
+      <p>&copy; 2026 - Praktikum</p>
+    </footer>
 
-<main>
-    {% block content %}{% endblock %}
-</main>
-
-<footer>
-    <p>&copy; 2025 - Praktikum</p>
-</footer>
-
-<!-- JS -->
-<script src="{% static 'mahasiswa/js/main.js' %}"></script>
-
-</body>
+    <script src="{% static 'mahasiswa/js/main.js' %}"></script>
+  </body>
 </html>
